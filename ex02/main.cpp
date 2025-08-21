@@ -20,9 +20,9 @@ int main(int argc, char **argv)
 	try 
 	{
 		PmergeMe pmerge;
-		pmerge.checkInput(argc, argv);
+		pmerge.sort(argc - 1, &argv[1]);
 	}
-	catch (const PmergeMe::DuplicateValueException &e)
+	catch (const PmergeMe::InvalidInputException &e)
 	{
 		std::cerr << e.what() << std::endl;
 		return (1);
